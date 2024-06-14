@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: xmxl4y1az-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: xmxl4y1az-go 
+  name: xmxl4y1az-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: xmxl4y1az-go
+    weight: 100 
